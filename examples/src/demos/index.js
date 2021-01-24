@@ -37,33 +37,6 @@ const ClickAndHover = { descr: '', tags: [], Component: lazy(() => import('./tes
 const StopPropagation = { descr: '', tags: [], Component: lazy(() => import('./tests/StopPropagation')), dev: true }
 const Debugging = { descr: '', tags: [], Component: lazy(() => import('./tests/Debugging')), dev: true }
 
-export {
-  Refraction,
-  Swarm,
-  Montage,
-  Font,
-  MeshLine,
-  VolumetricLight,
-  GltfPlanet,
-  Physics,
-  Gestures,
-  GltfAnimation,
-  SVGLoader,
-  Hud,
-  InstancedMesh,
-  Lines,
-  MultiRender,
-  MultiScene,
-  Pointcloud,
-  Reparenting,
-  Scroll,
-  SelectiveBloom,
-  ShaderMaterial,
-  WebGL2,
-  Selection,
-  Concurrent,
-  Viewcube,
-  ClickAndHover,
-  StopPropagation,
-  Debugging,
-}
+const Bug191 = { descr: '', tags: [], Component: lazy(() => import('./dev/Bug')), dev: true }
+
+export { Bug191 }

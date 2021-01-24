@@ -3,35 +3,18 @@ import styled from 'styled-components'
 import { Link, Route, Switch, useRouteMatch, useLocation } from 'react-router-dom'
 import * as demos from '../demos'
 import { Page as PageImpl } from '../styles'
+import { Bug } from '../demos/dev/Bug'
 
-const defaultComponent = 'Refraction'
+const defaultComponent = 'Bug191'
 const visibleComponents = Object.entries(demos)
   //.filter(([name, item]) => !item.dev)
   .reduce((acc, [name, item]) => ({ ...acc, [name]: item }), {})
 
 export default function Intro() {
-  let match = useRouteMatch('/demo/:name')
-  let { bright } = visibleComponents[match ? match.params.name : defaultComponent]
   return (
-    <Page>
-      <Suspense fallback={null}>
-        <Switch>
-          <Route exact path="/" component={visibleComponents.Refraction.Component} />
-          <Route
-            exact
-            path="/demo/:name"
-            render={({ match }) => {
-              const Component = visibleComponents[match.params.name].Component
-              return <Component />
-            }}
-          />
-        </Switch>
-      </Suspense>
-      <Demos />
-      <a href="https://github.com/pmndrs/react-three-fiber" style={{ color: bright ? '#2c2d31' : 'white' }}>
-        Github
-      </a>
-    </Page>
+    <div>
+      <Bug />
+    </div>
   )
 }
 
